@@ -20,7 +20,7 @@ void addNote() {
     nodeBaru->noMhs = nim;
     nodeBaru->name = nama;
 
-    if (START == NULL || nim <= SATRT->noMhs) {
+    if (START == NULL || nim <= START->noMhs) {
         if (START != NULL && nim == START->noMhs)
         {
             cout << "NIM sudah ada" << endl;
@@ -75,7 +75,13 @@ bool serachNode(int nim, Node* current, Node* previous) {
 
 bool deleteNode(int nim) {
     Node* current = START;
-    Node* previous = START
+    Node* previous = START;
+    if (serachNode(nim, previous, current) == false)
+        return false;
+    previous->next = current->next;
+    if (current == START)
+        START = current->next;
+    return true;
 }
 
 int main()
