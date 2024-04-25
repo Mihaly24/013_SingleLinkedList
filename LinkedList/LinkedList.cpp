@@ -65,7 +65,7 @@ bool serachNode(int nim, Node* current, Node* previous) {
     }
     else id(current->noMhs == nim)
     {
-        returbn true;
+        return true;
     }
         
 }
